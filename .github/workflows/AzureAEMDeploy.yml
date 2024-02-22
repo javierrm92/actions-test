@@ -1,6 +1,6 @@
 on: [push]
 
-name: AzureARMDeploy
+name: AzureAEMDeploy
 
 jobs:
   deploy:
@@ -20,6 +20,6 @@ jobs:
           inlineScript: |
             az deployment group create \
             --name StorageAccountDeployment \
-            --resource-group savdevgithubdeploy \
+            --resource-group RgtestGroup \
             --template-file armtemplates/storageaccount.json \
             --parameters storageAccountType=Standard_GRS
